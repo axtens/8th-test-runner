@@ -33,7 +33,7 @@ output_dir=$(realpath "${3%/}")
 mkdir -p "${output_dir}"
 
 # Build the Docker image
-docker build --rm -t --build-arg ZIP_PASSWORD="${ZIP_PASSWORD}" exercism/8th-runner .
+docker build --rm --build-arg ZIP_PASSWORD="${ZIP_PASSWORD}" -t exercism/8th-test-runner .
 
 # Run the Docker image using the settings mimicking the production environment
 docker run \

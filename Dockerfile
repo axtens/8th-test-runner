@@ -15,5 +15,5 @@ RUN unzip -P "${ZIP_PASSWORD}" 8th.zip && \
 ENV PATH=$PATH:/opt/8th/bin/lin64
 
 WORKDIR /opt/test-runner
-COPY . .
+COPY bin/run.sh bin/run.sh
 ENTRYPOINT ["/opt/test-runner/bin/run.sh"]

@@ -1,5 +1,5 @@
 {
   "version": 1,
-  "status": "fail",
-  "message": "TODO: replace with correct output"
+  "status": "error",
+  "message": "Exception: Unknown q2437@#:: at line 2 char 8 in /opt/test-runner/tests/example-syntax-error/leap.8th: task REPL"
 }
