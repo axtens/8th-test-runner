@@ -13,6 +13,8 @@ jobs:
   build-and-push-image:
     if: github.repository_owner == 'exercism' # Stops this job from running on forks.
     uses: exercism/github-actions/.github/workflows/docker-build-push-image.yml@main
+    with:
+      docker_hub: false
     secrets:
       AWS_ACCOUNT_ID: ${{secrets.AWS_ACCOUNT_ID}}
       AWS_REGION: ${{secrets.AWS_REGION}}
@@ -20,3 +22,4 @@ jobs:
       AWS_ECR_SECRET_ACCESS_KEY: ${{secrets.AWS_ECR_SECRET_ACCESS_KEY}}
       DOCKERHUB_USERNAME: ${{secrets.DOCKERHUB_USERNAME}}
       DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
+      DOCKER_BUILD_ARGS: ZIP_PASSWORD=${{secrets.ZIP_PASSWORD}}

@@ -27,9 +27,12 @@ jobs:
           context: .
           push: false
           load: true
-          tags: exercism/test-runner
+          tags: exercism/8th-test-runner
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: ZIP_PASSWORD=${{secrets.ZIP_PASSWORD}}
 
       - name: Run Tests in Docker
         run: bin/run-tests-in-docker.sh
+        env:
+          ZIP_PASSWORD: ${{secrets.ZIP_PASSWORD}}
